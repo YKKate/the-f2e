@@ -1,0 +1,130 @@
+@mixin border-radius($angle) {
+	border-radius: $angle;
+	-webkit-border-radius: $angle;/* support Safari, Chrome */
+	-moz-border-radius: $angle;/* support firefox */
+}
+
+@mixin clearfix {
+	&:after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+
+@mixin transform($transform){
+	transform: $transform;
+	-webkit-transform:$transform; 
+	-moz-transform: $transform; 
+	-ms-transform: $transform; 
+	-o-transform: $transform;
+}
+
+@mixin align-center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%); 
+	-moz-transform: translateX(-50%) translateY(-50%); 
+	-ms-transform: translateX(-50%) translateY(-50%); 
+	-o-transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin transition($transition) {
+	transition: $transition;
+	-moz-transition: $transition;
+	-webkit-transition: $transition;
+	-o-transition: $transition;
+	-ms-transition: $transition;
+}
+
+@mixin animation($animation){
+	-webkit-animation: $animation;
+    -moz-animation: $animation;
+    -o-animation: $animation;
+    -ms-animation: $animation;
+    animation: $animation;
+}
+
+@mixin column-count($column-count) {
+	column-count: $column-count;
+	-moz-column-count: $column-count;
+	-webkit-column-count: $column-count;
+}
+
+@mixin mediaMax($max) {
+	@media screen and (max-width: $max) {
+		@content;
+	}
+}
+@mixin mediaMin($min) {
+	@media screen and (min-width: $min) {
+		@content;
+	}
+}
+
+@mixin text-align-justify(){
+	text-align: justify;
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+@mixin placeholder(){
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+}
+
+@mixin box-sizing($box-sizing){
+	-webkit-box-sizing: $box-sizing;
+     -moz-box-sizing: $box-sizing;
+          box-sizing: $box-sizing;
+}
+
+@mixin bgAll {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@mixin filter( $filter ) {
+	-webkit-filter: $filter;
+    filter: $filter;
+}
+
+
+
+$baseline_px: 16px;
+
+@mixin rem($property, $px_values) {
+	$baseline_rem: ($baseline_px / 1rem);
+	#{$property}: $px_values;
+	@if type-of($px_values) == 'number' {
+		#{$property}: $px_values / $baseline_rem;
+	}
+	@else {
+		$rem_values: ();
+		@each $value in $px_values {
+			@if $value == 0 { 
+				$rem_values: append($rem_values, $value); 
+			}
+			@else {
+				$rem_values: append($rem_values, ($value / $baseline_rem) );
+			}
+		}
+		#{$property}: $rem_values;
+	}
+}

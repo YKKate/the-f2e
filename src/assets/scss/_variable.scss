@@ -1,0 +1,15 @@
+@import "_mixin";
+
+$pcWidth: 1024px;
+$mobileWidth: 768px;
+
+$topMenuHeight: 50px;
+$topBreadcrumbHeight: 40px;
+
+$borderColor: #606060;
+$bgColor: #F6F6F6;
+
+@mixin PCWidth {
+  max-width: $pcWidth;
+  margin: 0 auto;
+}

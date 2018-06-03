@@ -1,0 +1,194 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M810.667 469.333h-256v-256c0-25.6-17.067-42.667-42.667-42.667s-42.667 17.067-42.667 42.667v256h-256c-25.6 0-42.667 17.067-42.667 42.667s17.067 42.667 42.667 42.667h256v256c0 25.6 17.067 42.667 42.667 42.667s42.667-17.067 42.667-42.667v-256h256c25.6 0 42.667-17.067 42.667-42.667s-17.067-42.667-42.667-42.667z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "plus"
+        ],
+        "grid": 24
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 0,
+        "prevSize": 24,
+        "code": 59652,
+        "name": "plus"
+      },
+      "setIdx": 0,
+      "setId": 4,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M768 716.8h-512l256-460.8 256 460.8z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "triangle-up"
+        ],
+        "grid": 20
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 1,
+        "prevSize": 20,
+        "code": 59650,
+        "name": "triangle-up"
+      },
+      "setIdx": 1,
+      "setId": 3,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M256 307.2h512l-256 460.8-256-460.8z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "triangle-down"
+        ],
+        "grid": 20
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 2,
+        "id": 0,
+        "prevSize": 20,
+        "code": 59651,
+        "name": "triangle-down"
+      },
+      "setIdx": 1,
+      "setId": 3,
+      "iconIdx": 1
+    },
+    {
+      "icon": {
+        "paths": [
+          "M0 153.6h1024v102.4h-1024v-102.4zM0 460.8h1024v102.4h-1024v-102.4zM0 768h1024v102.4h-1024v-102.4z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "menu"
+        ],
+        "grid": 20
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 0,
+        "prevSize": 20,
+        "code": 59648,
+        "name": "menu"
+      },
+      "setIdx": 4,
+      "setId": 0,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M510.016 1024c0 0-318.016-449.984-318.016-641.984 0-378.016 318.016-382.016 318.016-382.016s321.984 4 321.984 380c0 197.984-321.984 644-321.984 644zM512 192c-70.688 0-128 57.312-128 128s57.312 128 128 128 128-57.312 128-128-57.312-128-128-128z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "location",
+          "map marker",
+          "marker",
+          "pin"
+        ],
+        "grid": 16
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 0,
+        "prevSize": 32,
+        "code": 59649,
+        "name": "location"
+      },
+      "setIdx": 2,
+      "setId": 2,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showCodes": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon",
+        "majorVersion": 1,
+        "minorVersion": 0
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false,
+      "ie7": true,
+      "noie8": false,
+      "showSelector": false,
+      "showMetrics": false,
+      "showMetadata": false,
+      "showVersion": false,
+      "cssVars": false,
+      "cssVarsFormat": "scss"
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215
+    },
+    "historySize": 50
+  }
+}

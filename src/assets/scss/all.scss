@@ -1,0 +1,28 @@
+@import "_reset";
+@import "_variable";
+@import "_mixin";
+
+.page {
+  $marginVerticle: 15px;
+  min-height: calc(100% - #{$marginVerticle} * 2);
+  margin: $marginVerticle 20px;
+  padding: 20px 30px;
+  border: 1px solid $borderColor;
+  background-color: #fff;
+  overflow: auto;
+  @include mediaMax($mobileWidth){
+    padding: 10px 15px;
+  }  
+}
+
+.vdp-datepicker {
+  input {
+    height: 25px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid $borderColor;
+    box-sizing: border-box;
+    background-color: $bgColor;
+    border-radius: 3px;
+  }
+}
