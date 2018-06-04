@@ -157,6 +157,23 @@ button.add {
       background-color: $bgColor;
       border-radius: 3px;
     }
+    // .select {
+    //   position: relative;
+    //   background-image: linear-gradient( #000, #000 10px, #FFF 10px, #FFF 20px);
+    //   // &::after {
+    //   //   content: '';
+    //   //   position: absolute;
+    //   //   right: 5px;
+    //   //   top: 50%;
+    //   //   transform: translateY(-50%);
+    //   //   width: 0;
+    //   //   height: 0;
+    //   //   border-style: solid;
+    //   //   border-width: 8px 5px 0 5px;
+    //   //   border-color: #888 transparent transparent transparent;
+    //   //   z-index: 1;
+    //   // }
+    // }
   }
   .control {
     position: absolute;

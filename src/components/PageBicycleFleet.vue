@@ -17,10 +17,7 @@
       </label>
       <label>
         <p>Bicycle ID</p>
-        <datepicker
-          :format="customFormatter"
-          v-model="search.bicycleId"
-        ></datepicker>
+        <input type="text" v-model="search.bicycleId">
       </label>
       <div class="control">
         <label>
@@ -304,14 +301,11 @@ $mapMarginBottom: 20px;
     max-width: 100vw;
     margin-right: auto;
     margin-left: auto;
-    text-align: right;
     > label {
       $pWidth: 100px;
-      width: 100%;
       margin-right: 0;
       font-size: 0;
       margin-bottom: 15px;
-      text-align-last: left;
       p {
         width: $pWidth;
         font-size: 1rem;
@@ -321,7 +315,7 @@ $mapMarginBottom: 20px;
         box-sizing: border-box;
       }
       input, select {
-        width: calc(100% - #{$pWidth} - 1px * 2);
+        // width: calc(100% - #{$pWidth} - 1px * 2);
         font-size: 1rem;
       }
     }
@@ -330,6 +324,8 @@ $mapMarginBottom: 20px;
       top: inherit;
       right: inherit;
       transform: none;
+      width: 100%;
+      text-align: right;
     }
   }
   .result-list {
@@ -345,6 +341,9 @@ $mapMarginBottom: 20px;
   .search-box {
     margin-top: 10px;
     margin-bottom: 10px;
+    > label {
+      width: 100%;
+    }
   }
 }
 </style>

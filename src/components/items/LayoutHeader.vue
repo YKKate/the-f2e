@@ -53,7 +53,7 @@
         <router-link :to="{name: 'PageLock'}">Lock</router-link>
       </li>
       <li>
-        Logout
+        <router-link :to="{name: 'PageLogin'}">Logout</router-link>
       </li>
     </menu>
     <div class="breadcrumb">
@@ -158,6 +158,7 @@ menu {
     a {
       text-decoration: none;
       color: $menuColor;
+      font-size: 1.2rem;
       &.router-link-exact-active.router-link-active {
         color: $menuActiveColor;
       }
@@ -177,7 +178,7 @@ menu {
         li {
           position: relative;
           margin-bottom: 5px;
-          font-size: 0.85rem;
+          font-size: 1rem;
           font-weight: 300;
           &::before {
             content: '-';
@@ -211,6 +212,26 @@ menu {
   a {
     color: $borderColor;
     text-decoration: none;
+  }
+}
+@include mediaMax($mobileWidth){
+  menu {
+    text-align: center;
+    > li {
+      font-size: 1.2rem;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 0;
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .breadcrumb {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>

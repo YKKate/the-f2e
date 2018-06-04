@@ -8,7 +8,7 @@
             <router-link :to="{name: 'PageLockEdit'}">Edit</router-link>
           </button>
           <button class="history">
-            <router-link :to="{name: 'PageFleetContractHistory'}">History</router-link>
+            <router-link :to="{name: 'PageLockHistory'}">History</router-link>
           </button>
         </div>
       </div>
@@ -127,6 +127,42 @@ export default {
             i {
               margin: 0 20px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+@include mediaMax($mobileWidth){
+  .page {
+    > .title {
+      .control {
+        position: relative;
+        right: inherit;
+        top: inherit;
+        transform: none;
+        margin-top: 10px;
+      }
+    }
+    > .content {
+      .box {
+        padding: 0;
+        &:not(:last-child) {
+          border-bottom: 0;
+        }
+        .item {
+          padding: 10px 0;
+          .title {
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+          }
+          .text {
+            display: block;
+            width: 100%;
+            padding-left: 0;
+            font-weight: normal;
           }
         }
       }

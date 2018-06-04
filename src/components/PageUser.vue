@@ -221,6 +221,7 @@ button.add {
         width: $pWidth - $marginRight;
         margin-right: $marginRight;
         text-align: right;
+        text-align-last: right;
       }
       input, select {
         width: calc(100% - #{$pWidth} - 1px * 2);
@@ -471,6 +472,31 @@ button.add {
   .search-box {
     margin-top: 10px;
     margin-bottom: 10px;
+    .chart {
+      display: block;
+      width: 60%;
+      margin: auto;
+    }
+    .labels {
+      display: block;
+      width: 100%;
+      label {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .control {
+        position: relative;
+        right: inherit;
+        bottom: inherit;
+        transform: none;
+      }
+    }
+  }
+  .popup {
+    padding: 20px;
+    &.active {
+      width: 90vw;
+    }
   }
 }
 </style>

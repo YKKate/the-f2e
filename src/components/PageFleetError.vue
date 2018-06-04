@@ -173,6 +173,7 @@ $btnColor: #124797;
       width: $pWidth - $marginRight;
       margin-right: $marginRight;
       text-align: right;
+      text-align-last: right;
     }
     > input, select {
       width: calc(100% - #{$pWidth} - 1px * 2);
@@ -406,6 +407,14 @@ $btnColor: #124797;
   .search-box {
     margin-top: 10px;
     margin-bottom: 10px;
+    label {
+      width: 100%;
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(n+3) {
+        width: 100%;
+      }
+    }
   }
 }
 </style>

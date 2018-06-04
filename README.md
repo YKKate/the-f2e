@@ -35,7 +35,7 @@ npm run build --report
 > Vue v2.5.2 - web framework
 
 ## Code Style
-> 使用 eslint 的標準寫法進行轉謝
+> 使用 eslint 的標準寫法進行撰寫
 
 ## Supported Browsers
 > 目前我手邊只有 macbook，在開發時只針對 Chrome in mac 進行觀看，但 Vue-cli 的 webpack 有後處理 CSS 的機制，會幫忙補齊兼容性的 CSS 語法，且我已盡量使用兼容性較高的 CSS 進行撰寫 。

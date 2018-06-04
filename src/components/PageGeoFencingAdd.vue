@@ -5,7 +5,9 @@
       <p class="summary">Please add the settings of geo fence</p>
       <div class="control">
         <button class="save">Save</button>
-        <button class="cancel">Cancel</button>
+        <button class="cancel">
+          <router-link :to="{name: 'PageGeoFencing'}">Cancel</router-link>
+        </button>
       </div>
     </header>
     <div class="content">
@@ -137,6 +139,10 @@ header {
       }
       &.cancel {
         background-color: #FE7A8F;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
       }
     }
   }
@@ -285,6 +291,22 @@ header {
         display: block;
         width: 100%;
         padding-left: 0;
+        .fields-box {
+          $indexWidth: 50px;
+          $deleteWidth: 50px;
+          .index {
+            width: $indexWidth;
+          }
+          .latitude {
+            width: calc( (100% - #{$indexWidth} - #{$deleteWidth} ) / 2);
+          }
+          .longitude {
+            width: calc( (100% - #{$indexWidth} - #{$deleteWidth} ) / 2);
+          }
+          .delete {
+            width: $deleteWidth;
+          }
+        }
       }
     }
   }

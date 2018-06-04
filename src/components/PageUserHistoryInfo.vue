@@ -116,4 +116,41 @@ export default {
     }
   }
 }
+@include mediaMax($mobileWidth){
+  .page {
+    > .title {
+      .control {
+        position: relative;
+        right: inherit;
+        top: inherit;
+        transform: none;
+        margin-top: 10px;
+      }
+    }
+    > .content {
+      .box {
+        padding: 0;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+        .item {
+          padding: 10px 0;
+          .title {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+          }
+          .text {
+            display: block;
+            width: 100%;
+            padding-left: 0;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

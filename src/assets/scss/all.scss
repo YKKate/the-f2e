@@ -2,6 +2,12 @@
 @import "_variable";
 @import "_mixin";
 
+button {
+  font-family: Helvetica, Arial, 微軟正黑體, "Microsoft JhengHei", sans-serif;
+}
+select {
+  -webkit-appearance: menulist;
+}
 .page {
   $marginVerticle: 15px;
   min-height: calc(100% - #{$marginVerticle} * 2);
@@ -11,7 +17,10 @@
   background-color: #fff;
   overflow: auto;
   @include mediaMax($mobileWidth){
-    padding: 10px 15px;
+    padding: 10px 10px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }  
 }
 

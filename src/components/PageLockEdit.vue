@@ -491,6 +491,144 @@ export default {
     }
   }
 }
+@include mediaMax($pcWidth){
+  .page {
+    > .title {
+      p.notice {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        transform: none;
+      }
+      .control {
+        position: relative;
+        right: inherit;
+        top: inherit;
+        transform: none;
+        margin-top: 10px;
+      }
+    }
+    > .content {
+      .box {
+        padding: 0;
+        font-size: 0;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+        .item {
+          display: inline-block;
+          vertical-align: top;
+          width: 48%;
+          padding: 10px 0;
+          font-size: 1rem;
+          &:nth-child(2n+1) {
+            margin-right: 2%;
+          }
+          &.error {
+            .text {
+              p.error-text {
+                left: inherit;
+                right: 0;
+              }
+            }
+          }
+          .title {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 5px;
+          }
+          .text {
+            width: 100%;
+            padding-left: 0;
+            > span {
+              position: relative;
+              right: inherit;
+              top: inherit;
+              display: inline-block;
+              margin-top: 20px;
+            }
+            .vdp-datepicker {
+              width: 100%;
+            }
+            select {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .repeat-box {
+        width: 90%;
+        padding: 10px 0;
+        .header {
+          margin-bottom: 10px;
+        }
+        .field {
+          padding: 5px 0;
+          font-size: 0;
+        }
+        $btnWidth: 30px;
+        .item, .reason {
+          width: calc( (100% - #{$btnWidth} ) / 2 - 1px * 2);
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 1rem;
+          padding-right: 10px;
+          box-sizing: border-box;
+          > * {
+            width: 100%;
+          }
+        }
+        button.add {
+          display: inline-block;
+          vertical-align: middle;
+          width: $btnWidth;
+          height: $btnWidth;
+          line-height: $btnWidth;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+@include mediaMax($mobileWidth){
+  .page {
+    > .content {
+      .box {
+        .item {
+          width: 100%;
+          &:nth-child(2n+1) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    > .popup {
+      width: 95vw;
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .box {
+        .item {
+          padding: 10px 0;
+          .title {
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+          }
+          .text {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding-left: 0;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 
 <style lang="scss">

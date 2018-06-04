@@ -150,4 +150,50 @@ export default {
     }
   }
 }
+@include mediaMax($pcWidth){
+}
+@include mediaMax($mobileWidth){
+  .page {
+    > .title {
+      .control {
+        position: relative;
+        right: inherit;
+        top: inherit;
+        transform: none;
+        margin-top: 10px;
+      }
+    }
+    > .content {
+      width: 95%;
+      margin: auto;
+      .box {
+        padding: 0;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+        .item {
+          padding: 10px 0;
+          .title {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+          }
+          .text {
+            width: 100%;
+            padding-left: 0;
+            font-weight: normal;
+            span {
+              position: relative;
+              right: inherit;
+              top: inherit;
+              transform: none;
+              margin-left: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

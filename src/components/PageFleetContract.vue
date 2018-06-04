@@ -206,6 +206,7 @@ button.add {
         width: $pWidth - $marginRight;
         margin-right: $marginRight;
         text-align: right;
+        text-align-last: right;
       }
       input, select {
         width: calc(100% - #{$pWidth} - 1px * 2);
@@ -325,6 +326,7 @@ button.add {
     $paddingVerticle: 10px;
     height: $controlHeight;
     position: relative;
+    text-align: left;
     select {
       width: 100px;
       height: $controlHeight - $paddingVerticle * 2;
@@ -411,6 +413,26 @@ button.add {
   .search-box {
     margin-top: 10px;
     margin-bottom: 10px;
+    .chart {
+      display: block;
+      width: 60%;
+      margin: auto;
+    }
+    .labels {
+      display: block;
+      width: 100%;
+      label {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .control {
+        position: relative;
+        display: block;
+        right: inherit;
+        bottom: inherit;
+        width: 100%;
+      }
+    }
   }
 }
 </style>

@@ -26,6 +26,8 @@ const PageLock = resolve => require(['@/components/PageLock'], resolve)
 const PageLockInfo = resolve => require(['@/components/PageLockInfo'], resolve)
 const PageLockImport = resolve => require(['@/components/PageLockImport'], resolve)
 const PageLockEdit = resolve => require(['@/components/PageLockEdit'], resolve)
+const PageLockHistory = resolve => require(['@/components/PageLockHistory'], resolve)
+const PageLockHistoryInfo = resolve => require(['@/components/PageLockHistoryInfo'], resolve)
 const PageUser = resolve => require(['@/components/PageUser'], resolve)
 const PageUserInfo = resolve => require(['@/components/PageUserInfo'], resolve)
 const PageUserAdd = resolve => require(['@/components/PageUserAdd'], resolve)
@@ -322,6 +324,36 @@ export default new Router({
             parentRouteText: 'LOCK INFORMATION',
             parentRoute2: 'PageLock',
             parentRouteText2: 'LOCK LIST'
+          }
+        },
+        {
+          path: 'lock-history',
+          name: 'PageLockHistory',
+          alias: '',
+          component: PageLockHistory,
+          meta: {
+            keepAlive: false,
+            text: 'LOCK HISTORY LIST',
+            parentRoute: 'PageLockInfo',
+            parentRouteText: 'LOCK INFORMATION',
+            parentRoute2: 'PageLock',
+            parentRouteText2: 'LOCK LIST'
+          }
+        },
+        {
+          path: 'lock-history-info',
+          name: 'PageLockHistoryInfo',
+          alias: '',
+          component: PageLockHistoryInfo,
+          meta: {
+            keepAlive: false,
+            text: 'LOCK HISTORY INFORMATION',
+            parentRoute: 'PageLockHistory',
+            parentRouteText: 'LOCK HISTORY LIST',
+            parentRoute2: 'PageLockInfo',
+            parentRouteText2: 'LOCK INFORMATION',
+            parentRoute3: 'PageLock',
+            parentRouteText3: 'LOCK LIST'
           }
         },
         {

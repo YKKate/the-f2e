@@ -2,53 +2,90 @@
   <div id="contract-info">
     <div class="page">
       <div class="title">
-        <h2>IMPORT LOCK</h2>
+        <h2>LOCK HISTORY INFORMATION</h2>
         <div class="control">
-          <button class="save" @click="popup.status = true">
-            Save
-          </button>
-          <button class="cancel">
-            <router-link :to="{name: 'PageLock'}">Cancel</router-link>
+          <button class="back">
+            <router-link :to="{name: 'PageLockHistory'}">Back</router-link>
           </button>
         </div>
       </div>
       <div class="content">
         <div class="box">
           <div class="item">
-            <p class="title">Import by CSV file</p>
-            <div class="text">
-              <input type="file" accept=".csv">
-              <p class="summary">Download <a>csv template</a></p>
-            </div>
+            <p class="title">Item</p>
+            <p class="text"></p>
           </div>
         </div>
-      </div>
-      <div class="popup" :class="{'active': popup.status}">
-        <p class="title">提示窗</p>
-        <p class="content">匯入失敗</p>
-        <button class="confirm" @click="popup.status = false">confirm</button>
+        <div class="box">
+          <div class="item">
+            <p class="title">Reason</p>
+            <p class="text"></p>
+          </div>
+          <div class="item">
+            <p class="title">Lock ID</p>
+            <p class="text"></p>
+          </div>
+          <div class="item">
+            <p class="title">RCZ</p>
+            <p class="text">4</p>
+          </div>
+          <div class="item">
+            <p class="title">Sigfox ID</p>
+            <p class="text">0000000</p>
+          </div>
+          <div class="item">
+            <p class="title">Status</p>
+            <p class="text">Contract</p>
+          </div>
+          <div class="item">
+            <p class="title">Company</p>
+            <p class="text">Fox-Tech</p>
+          </div>
+          <div class="item">
+            <p class="title">Blue tooth UUID</p>
+            <p class="text"></p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="item">
+            <p class="title">Contract Area</p>
+            <p class="text">Taiwan</p>
+          </div>
+          <div class="item">
+            <p class="title">Start Time</p>
+            <p class="text">2018-02-30<span>Days<i>10</i>day</span></p>
+          </div>
+          <div class="item">
+            <p class="title">End Time</p>
+            <p class="text">2018-03-10</p>
+          </div>
+          <div class="item">
+            <p class="title">Status</p>
+            <p class="text">Taipei Fox-tech</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="item">
+            <p class="title">Lock</p>
+            <p class="text">00123456789</p>
+          </div>
+          <div class="item">
+            <p class="title">User Name</p>
+            <p class="text">Fox-tech</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'PageLockImport',
-  data () {
-    return {
-      popup: {
-        status: false
-      }
-    }
-  }
+  name: 'PageFleetContractInfo'
 }
 </script>
 
 <style lang="scss" scoped>
 @import '~@/assets/scss/_variable.scss';
-input[type="file"] {
-  // border: 1px solid $borderColor;
-}
 .page {
   > .title {
     position: relative;
@@ -74,22 +111,18 @@ input[type="file"] {
           text-decoration: none;
           color: #fff;
         }
-        &.cancel {
-          background-color: #FE7A8F;
-        }
       }
     }
   }
   > .content {
     font-weight: bold;
-    padding-bottom: 50px;
     .box {
       padding: 10px 0;
       &:not(:last-child) {
         border-bottom: 1px solid $borderColor;
       }
       .item {
-        $titleWidth: 300px;
+        $titleWidth: 250px;
         font-size: 0;
         padding: 25px 0;
         position: relative;
@@ -120,41 +153,6 @@ input[type="file"] {
       }
     }
   }
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    padding: 50px;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    max-width: 0;
-    max-height: 0;
-    overflow: hidden;
-    display: none;
-    border: 1px solid $borderColor;
-    background-color: #fff;
-    text-align: center;
-    &.active {
-      opacity: 1;
-      max-width: 80vw;
-      width: 500px;
-      max-height: none;
-      display: block;
-    }
-    .title {
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-    }
-    .content {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    button.confirm {
-      color: #fff;
-      background-color: #124797;
-      border-radius: 5px;
-    }
-  }
 }
 @include mediaMax($mobileWidth){
   .page {
@@ -164,53 +162,27 @@ input[type="file"] {
         right: inherit;
         top: inherit;
         transform: none;
-        text-align: right;
+        margin-top: 10px;
       }
     }
     > .content {
       .box {
+        padding: 0;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
         .item {
           padding: 10px 0;
           .title {
             display: block;
-            position: relative;
             width: 100%;
+            text-align: left;
             margin-bottom: 5px;
             font-size: 1.1rem;
-            text-align: left;
           }
           .text {
             display: block;
             width: 100%;
-            padding-left: 0;
-            font-weight: normal;
-            p.error-text {
-              right: 0;
-              left: inherit;
-            }
-          }
-        }
-      }
-    }
-    > .popup {
-      width: 95vw;
-      h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-      .box {
-        .item {
-          padding: 10px 0;
-          .title {
-            display: block;
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-          }
-          .text {
-            display: block;
-            width: 100%;
-            text-align: left;
             padding-left: 0;
             font-weight: normal;
           }

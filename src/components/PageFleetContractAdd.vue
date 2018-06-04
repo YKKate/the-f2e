@@ -538,6 +538,88 @@ export default {
     }
   }
 }
+@include mediaMax($pcWidth){
+  .page {
+    > .title {
+      p.notice {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        transform: none;
+      }
+      .control {
+        position: relative;
+        right: inherit;
+        top: inherit;
+        transform: none;
+        margin-top: 10px;
+      }
+    }
+    > .content {
+      .box {
+        padding: 0;
+        font-size: 0;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+        .item {
+          display: inline-block;
+          vertical-align: top;
+          width: 48%;
+          padding: 10px 0;
+          font-size: 1rem;
+          &:nth-child(2n+1) {
+            margin-right: 2%;
+          }
+          &.error {
+            .text {
+              p.error-text {
+                left: inherit;
+                right: 0;
+              }
+            }
+          }
+          .title {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 5px;
+          }
+          .text {
+            width: 100%;
+            padding-left: 0;
+            > span {
+              position: relative;
+              right: inherit;
+              top: inherit;
+              display: inline-block;
+              margin-top: 20px;
+            }
+            .vdp-datepicker {
+              width: 100%;
+            }
+            select {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include mediaMax($mobileWidth){
+  .page {
+    > .content {
+      .box {
+        .item {
+          width: 100%;
+          &:nth-child(2n+1) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 
 <style lang="scss">

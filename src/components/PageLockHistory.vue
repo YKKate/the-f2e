@@ -1,48 +1,5 @@
 <template>
-  <div id="lock">
-    <button class="add">
-      <router-link :to="{name: 'PageLockImport'}">Add New User</router-link>
-    </button>
-    <div class="search-box">
-      <div class="chart">
-        <chart-pie
-          :data="pieSettion.data"
-          :options="pieSettion.options"
-        ></chart-pie>
-      </div>
-      <div class="labels">
-        <label>
-          <p>Lock ID</p>
-          <input type="text" v-model="search.lockId">
-        </label>
-        <label>
-          <p>Sigfox ID</p>
-          <input type="text" v-model="search.sigfoxId">
-        </label>
-        <label>
-          <p>RCZ</p>
-          <select v-model="search.rcz">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-          </select>
-        </label>
-        <label>
-          <p>Status</p>
-          <select v-model="search.status">
-            <option value="A" selected>A</option>
-            <option value="B">B</option>
-          </select>
-        </label>
-        <label>
-          <p>Company</p>
-          <input type="text" v-model="search.company">
-        </label>
-        <div class="control">
-          <button class="search" @click="noData = !noData">Search</button>
-          <p class="clear">clear</p>
-        </div>
-      </div>
-    </div>
+  <div id="fleet-contract-history">
     <div class="result-list">
       <div class="table">
         <table>
@@ -54,13 +11,7 @@
                 <i class="icon-triangle-down"></i>
               </div>
             </th>
-            <th>Lock ID
-              <div class="sort">
-                <i class="icon-triangle-up"></i>
-                <i class="icon-triangle-down"></i>
-              </div>
-            </th>
-            <th>Type
+            <th>Item
               <div class="sort">
                 <i class="icon-triangle-up"></i>
                 <i class="icon-triangle-down"></i>
@@ -73,11 +24,10 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
               <td>
                 <!-- <i class="icon-location" @click="popup.open = true"></i> -->
                 <i class="view">
-                  <router-link :to="{name: 'PageLockInfo'}">View</router-link>
+                  <router-link :to="{name: 'PageLockHistoryInfo'}">View</router-link>
                 </i>
               </td>
             </tr>
@@ -105,11 +55,10 @@ export default {
   data () {
     return {
       search: {
-        lockId: '',
-        sigfoxId: '',
-        rcz: '',
+        name: '',
+        company: '',
         status: '',
-        company: ''
+        area: ''
       },
       noData: false,
       pieSettion: {
@@ -154,117 +103,16 @@ $searchBoxHeight: 200px;
 $searchBoxMarginVerticle: 20px;
 $controlHeight: 40px;
 $btnColor: #124797;
-button.add {
-  $btnMargin: 5px;
-  $btnHeight: $topBreadcrumbHeight - $btnMargin * 2;
-  position: fixed;
-  top: $topMenuHeight + $btnMargin;
-  left: 50%;
-  height: $btnHeight;
-  border-color: transparent;
-  background-color: $btnColor;
-  border-radius: 5px;
-  transform: translateX(-50%);
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-}
-.search-box {
-  $margin: $searchBoxMarginVerticle;
-  $controlWidth: 200px;
-  $chartsWidth: 150px;
-  position: relative;
-  height: $searchBoxHeight;
-  margin: $margin;
-  padding: 25px 30px + $controlWidth 25px 30px;
-  border: 1px solid $borderColor;
-  background-color: #fff;
-  box-sizing: border-box;
-  font-size: 0;
-  .chart {
-    width: $chartsWidth;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 1rem;
-  }
-  .labels {
-    width: calc(100% - #{$chartsWidth});
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0;
-    padding: 20px 0;
-    > * {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 1rem;
-    }
-    label {
-      width: 50%;
-      margin-bottom: 30px;
-      $pWidth: 100px;
-      font-size: 0;
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3) {
-        width: 33%;
-      }
-      > * {
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 1rem;
-      }
-      p {
-        $marginRight: 5px;
-        width: $pWidth - $marginRight;
-        margin-right: $marginRight;
-        text-align: right;
-      }
-      input, select {
-        width: calc(100% - #{$pWidth} - 1px * 2);
-        height: 25px;
-        padding: 5px;
-        border: 1px solid $borderColor;
-        box-sizing: border-box;
-        background-color: $bgColor;
-        border-radius: 3px;
-      }
-    }
-    .control {
-      position: absolute;
-      width: $controlWidth;
-      right: 0;
-      bottom: 10%;
-      padding-right: 20px;
-      transform: translateY(-50%);
-      box-sizing: border-box;
-      > * {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .search {
-        border-color: transparent;
-        color: #fff;
-        background-color: $btnColor;
-        border-radius: 5px;
-        margin-right: 10px;
-      }
-      .clear {
-        text-decoration: underline;
-        font-size: 0.85rem;
-      }
-    }
-  }
-}
 .result-list {
   $paddingVerticle: 25px;
-  height: calc(100vh - #{$topMenuHeight} - #{$topBreadcrumbHeight} - #{$searchBoxHeight} - #{$searchBoxMarginVerticle} * 2 - #{$searchBoxMarginVerticle});
+  $marginVerticle: 30px;
+  height: calc(100vh - #{$topMenuHeight} - #{$topBreadcrumbHeight} - #{$marginVerticle} * 2);
   overflow: hidden;
   padding: $paddingVerticle 30px;
   border: 1px solid $borderColor;
   background-color: #fff;
   box-sizing: border-box;
-  margin: 0 $searchBoxMarginVerticle;
+  margin: $marginVerticle $searchBoxMarginVerticle;
   .table {
     position: relative;
     height: calc(100% - #{$controlHeight});
@@ -424,102 +272,6 @@ button.add {
   .search-box {
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-}
-@include mediaMax($pcWidth){
-  button.add {
-    right: 10px;
-    left: inherit;
-    transform: none;
-  }
-  .search-box {
-    padding: 10px;
-    width: 95%;
-    height: auto;
-    max-width: 100vw;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: right;
-    label {
-      $pWidth: 100px;
-      width: 100%;
-      margin-right: 0;
-      font-size: 0;
-      margin-bottom: 15px;
-      text-align-last: left;
-      p {
-        width: $pWidth;
-        font-size: 1rem;
-        margin-right: 0;
-        text-align: right;
-        padding-right: 10px;
-        box-sizing: border-box;
-      }
-      input, select {
-        width: calc(100% - #{$pWidth} - 1px * 2);
-        font-size: 1rem;
-      }
-    }
-    .control {
-      position: relative;
-      top: inherit;
-      right: inherit;
-      transform: none;
-    }
-  }
-  .result-list {
-    width: 95%;
-    max-width: 100vw;
-    overflow: auto;
-    margin-right: auto;
-    margin-left: auto;
-    box-sizing: border-box;
-  }
-}
-@include mediaMax($mobileWidth){
-  #fleet-contract {
-    text-align: right;
-  }
-  button.add {
-    position: relative;
-    top: inherit;
-    right: inherit;
-    display: inline-block;
-    margin: 10px 10px 0 10px;
-  }
-  .search-box {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    .chart {
-      display: block;
-      width: 60%;
-      margin: auto;
-    }
-    .labels {
-      display: block;
-      width: 100%;
-      label {
-        width: 100%;
-        margin-bottom: 10px;
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3) {
-          width: 100%;
-        }
-      }
-      .control {
-        position: relative;
-        right: inherit;
-        bottom: inherit;
-        transform: none;
-      }
-    }
-  }
-  .popup {
-    padding: 20px;
-    &.active {
-      width: 90vw;
-    }
   }
 }
 </style>

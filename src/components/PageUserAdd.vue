@@ -353,6 +353,69 @@ export default {
     }
   }
 }
+@include mediaMax($mobileWidth){
+  .page {
+    > .title {
+      .control {
+        position: relative;
+        right: inherit;
+        top: inherit;
+        transform: none;
+        text-align: right;
+      }
+    }
+    > .content {
+      .box {
+        .item {
+          padding: 10px 0;
+          .title {
+            display: block;
+            position: relative;
+            width: 100%;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            text-align: left;
+          }
+          .text {
+            display: block;
+            width: 100%;
+            padding-left: 0;
+            font-weight: normal;
+            p.error-text {
+              right: 0;
+              left: inherit;
+            }
+          }
+        }
+      }
+    }
+    > .popup {
+      width: 95vw;
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .box {
+        .item {
+          padding: 10px 0;
+          .title {
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+          }
+          .text {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding-left: 0;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 
 <style lang="scss">
