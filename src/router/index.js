@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/components/Layout'
 
+const PageLogin = resolve => require(['@/components/PageLogin'], resolve)
 const PageIndex = resolve => require(['@/components/PageIndex'], resolve)
 const PageGeoFencing = resolve => require(['@/components/PageGeoFencing'], resolve)
 const PageGeoFencingAdd = resolve => require(['@/components/PageGeoFencingAdd'], resolve)
@@ -36,11 +37,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: Login
-    // },
+    {
+      path: '/login',
+      name: 'Login',
+      component: PageLogin
+    },
     {
       path: '/',
       name: 'PageApp',

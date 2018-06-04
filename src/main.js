@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import '@/assets/scss/all.scss'
 import '@/assets/icommon/style.css'
+import VCharts from 'v-charts'
 
+Vue.use(VCharts)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -13,5 +15,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  render: h => h(App)
 })

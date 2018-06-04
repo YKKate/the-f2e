@@ -1,3 +1,9 @@
+.icon-lock {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe906;');
+}
+.icon-envelope {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe905;');
+}
 .icon-plus {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe904;');
 }

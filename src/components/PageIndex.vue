@@ -7,134 +7,92 @@
     <div class="charts">
       <div class="pie">
         <p class="title">FLEET STATUS</p>
-        <chart-doughnut
-          :data="pieSettion.status.data"
-          :options="pieSettion.status.options"
-        ></chart-doughnut>
+        <ve-ring
+          :data="pieSetting.status.chartData"
+          :settings="pieSetting.status.settings"
+        ></ve-ring>
       </div>
       <div class="pie">
         <p class="title">FLEET ALERT</p>
-        <chart-pie
-          :data="pieSettion.alert.data"
-          :options="pieSettion.alert.options"
-        ></chart-pie>
+        <ve-ring
+          :data="pieSetting.alert.chartData"
+          :settings="pieSetting.alert.settings"
+        ></ve-ring>
       </div>
       <div class="pie">
         <p class="title">FLEET BATTERY</p>
-        <chart-pie
-          :data="pieSettion.battery.data"
-          :options="pieSettion.battery.options"
-        ></chart-pie>
+        <ve-pie
+          :data="pieSetting.battery.chartData"
+          :settings="pieSetting.battery.chartSettings"
+        ></ve-pie>
       </div>
     </div>
   </div>
 </template>
 <script>
-import pie from '@/components/items/pie'
 export default {
   name: 'PageIndex',
   data () {
     return {
-      pieSettion: {
+      pieSetting: {
         status: {
-          data: {
-            labels: [ ['Contracted', 50], ['cancellation', 50] ],
-            datasets: [
-              {
-                backgroundColor: [
-                  '#CE3134',
-                  '#81D235'
-                ],
-                data: [50, 50]
-              }
+          chartData: {
+            columns: ['Status', '访问用户'],
+            rows: [
+              { 'Status': 'In Use', '访问用户': 10 },
+              { 'Status': 'Parked', '访问用户': 10 }
             ]
           },
-          options: {
-            responsive: true,
-            legend: {
-              display: false
-            },
-            pieceLabel: {
-              render: function (args) {
-                return args.label + '\n\n' + args.percentage
-              },
-              mode: 'percentage',
-              fontColor: '#555',
-              precision: 0,
-              overlap: true
+          settings: {
+            radius: [100, 80],
+            hoverAnimation: false,
+            label: {
             }
           }
         },
         alert: {
-          data: {
-            labels: [ ['Contracted', 50], ['cancellation', 50] ],
-            datasets: [
-              {
-                backgroundColor: [
-                  '#CE3134',
-                  '#81D235'
-                ],
-                data: [50, 50]
-              }
+          chartData: {
+            columns: ['Status', '访问用户'],
+            rows: [
+              { 'Status': 'User', '访问用户': 10 },
+              { 'Status': 'Bicycle', '访问用户': 10 }
             ]
           },
-          options: {
-            responsive: true,
-            legend: {
-              display: false
-            },
-            pieceLabel: {
-              render: function (args) {
-                return args.label + '\n\n' + args.percentage
-              },
-              mode: 'percentage',
-              fontColor: '#555',
-              precision: 0,
-              overlap: true
+          settings: {
+            radius: [100, 80],
+            hoverAnimation: false,
+            label: {
             }
           }
         },
         battery: {
-          data: {
-            labels: [ ['Contracted', 50], ['cancellation', 50] ],
-            datasets: [
-              {
-                backgroundColor: [
-                  '#CE3134',
-                  '#81D235'
-                ],
-                data: [50, 50]
-              }
+          chartData: {
+            columns: ['text', 'battery'],
+            rows: [
+              { 'text': '0-10%', 'battery': 0 },
+              { 'text': '11-20%', 'battery': 0 },
+              { 'text': '21-30%', 'battery': 0 },
+              { 'text': '21-30%', 'battery': 0 },
+              { 'text': '31-40%', 'battery': 0 },
+              { 'text': '41-50%', 'battery': 0 },
+              { 'text': '91-100%', 'battery': 20 }
             ]
           },
-          options: {
-            responsive: true,
-            legend: {
-              display: false
-            },
-            pieceLabel: {
-              render: function (args) {
-                return args.label + '\n\n' + args.percentage
-              },
-              mode: 'percentage',
-              fontColor: '#555',
-              precision: 0,
-              overlap: true
-            }
+          settings: {
+            dimension: '日期',
+            metrics: 'Status'
           }
         }
       }
     }
-  },
-  components: {
-    'chart-pie': pie
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '~@/assets/scss/_variable.scss';
-$mapBoxHeight: 50vh;
+$mapBoxHeight: 60vh;
+$mapBoxTabletHeight: 50vh;
 $titleHeight: 40px;
 $mapPaddingVerticle: 20px;
 $mapBoxMarginVerticle: 20px;
@@ -168,11 +126,60 @@ $mapBoxMarginVerticle: 20px;
     font-size: 1rem;
     border: 1px solid $borderColor;
     box-sizing: border-box;
+    background-color: #fff;
     &:not(:last-child) {
       margin-right: $padding;
     }
     .title {
       margin-bottom: 20px;
+    }
+  }
+}
+@include mediaMax($pcWidth){
+  .fleet-location {
+    height: $mapBoxTabletHeight;
+    iframe {
+      height: calc(#{$mapBoxTabletHeight} - #{$titleHeight} - #{$mapPaddingVerticle} * 2);
+    }
+  }
+  .charts {
+    width: auto;
+    margin: 20px;
+    height: calc(100vh - #{$topMenuHeight} - #{$topBreadcrumbHeight} - #{$mapBoxTabletHeight} - #{$mapBoxMarginVerticle} * 2 - 20px );
+    .pie {
+      $padding: 20px;
+      width: calc((100% - #{$padding} * 2 ) / 3);
+      max-height: calc(100vh - #{$topMenuHeight} - #{$topBreadcrumbHeight} - #{$mapBoxTabletHeight} - #{$mapBoxMarginVerticle} * 2 - 20px );
+      box-sizing: border-box;
+      &:not(:last-child) {
+        margin-right: $padding;
+      }
+      .ve-ring {
+        max-width: 100%;
+      }
+    }
+  }
+}
+@include mediaMax($mobileWidth){
+  $mobileHeight: 350px;
+  .fleet-location {
+    height: $mobileHeight;
+    margin-left: 0;
+    margin-right: 0;
+    iframe {
+      height: calc(#{$mobileHeight} - #{$titleHeight} - #{$mapPaddingVerticle} * 2);
+    }
+  }
+  .charts {
+    margin-left: 0;
+    margin-right: 0;
+    .pie {
+      width: 100%;
+      max-height: inherit;
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 }
