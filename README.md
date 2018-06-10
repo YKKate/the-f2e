@@ -16,3 +16,4 @@
 此次練習項目
 1.  Vue cli 全環境部署
 2.  github 專案部署
+3.  gitpage 部署
