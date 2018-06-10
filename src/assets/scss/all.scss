@@ -2,36 +2,7 @@
 @import "_variable";
 @import "_mixin";
 
-button {
-  font-family: Helvetica, Arial, 微軟正黑體, "Microsoft JhengHei", sans-serif;
-}
-select {
-  -webkit-appearance: menulist;
-}
-.page {
-  $marginVerticle: 15px;
-  min-height: calc(100% - #{$marginVerticle} * 2);
-  margin: $marginVerticle 20px;
-  padding: 20px 30px;
-  border: 1px solid $borderColor;
-  background-color: #fff;
-  overflow: auto;
-  @include mediaMax($mobileWidth){
-    padding: 10px 10px;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }  
-}
-
-.vdp-datepicker {
-  input {
-    height: 25px;
-    width: 100%;
-    padding: 5px;
-    border: 1px solid $borderColor;
-    box-sizing: border-box;
-    background-color: $bgColor;
-    border-radius: 3px;
-  }
+a {
+  color: initial;
+  text-decoration: initial;
 }

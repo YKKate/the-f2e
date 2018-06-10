@@ -1,0 +1,12 @@
+@import "../_mixin";
+
+$pcWidth: 620px;
+$mobileWidth: 768px;
+
+$mainColor: #4A90E2;
+
+@mixin PCWidth {
+  max-width: $pcWidth;
+  width: 100%;
+  margin: 0 auto;
+}

@@ -1,19 +1,13 @@
 <template>
   <div id="app">
-    <app-header v-if="$route.name !== 'Login'"/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import LayoutHeader from '@/components/items/LayoutHeader'
-
 export default {
   http: { root: '/' },
-  name: 'App',
-  components: {
-    'app-header': LayoutHeader
-  }
+  name: 'App'
 }
 </script>
 

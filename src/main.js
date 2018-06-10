@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import '@/assets/scss/all.scss'
-import '@/assets/icommon/style.css'
+import '@/assets/icommon/style.scss'
 import VCharts from 'v-charts'
 
 Vue.use(VCharts)
