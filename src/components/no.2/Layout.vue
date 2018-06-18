@@ -3,7 +3,7 @@
     <header>
       <div class="header">
         <div class="logo">
-          <img src="/static/img/no.2/logo.png" alt="LOGO">
+          <img :src="'/static/img/no.2/logo.png'" alt="LOGO">
         </div>
         <div class="search">
           <font-awesome-icon :icon="['fas','search']"/>
