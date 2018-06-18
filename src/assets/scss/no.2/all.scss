@@ -1,0 +1,37 @@
+@import "../_reset";
+@import "../_mixin";
+@import "_variable";
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-weight: normal;
+  @include rem('font-size', 16px);
+}
+.title {
+  font-weight: bold;
+  @include rem('font-size', 24px);
+}
+.title2 {
+  font-weight: bold;
+  @include rem('font-size', 36px);
+}
+.subtitle {
+  font-weight: bold;
+  @include rem('font-size', 20px);
+}
+.remark {
+  font-weight: normal;
+  @include rem('font-size', 16px);
+}
+label {
+  font-weight: normal;
+  font-style: italic;
+  @include rem('font-size', 16px);
+}
+@include placeholder {
+  font-style: italic;
+  @include rem('font-size', 20px);
+}

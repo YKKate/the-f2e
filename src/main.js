@@ -5,9 +5,20 @@ import App from './App'
 import router from './router'
 import '@/assets/scss/all.scss'
 import '@/assets/icommon/style.scss'
-import VCharts from 'v-charts'
+import fontawesome from '@fortawesome/fontawesome'
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import solid from '@fortawesome/fontawesome-free-solid'
+import regular from '@fortawesome/fontawesome-free-regular'
+import brands from '@fortawesome/fontawesome-free-brands'
+// import VCharts from 'v-charts'
 
-Vue.use(VCharts)
+fontawesome.library.add(solid)
+fontawesome.library.add(regular)
+fontawesome.library.add(brands)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+// Vue.use(VCharts)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
