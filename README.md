@@ -28,3 +28,6 @@
 
 ## 第三週
 *   [設計稿](https://hexschool.github.io/THE_F2E_Design/week3-admin%20order/)
+*   [成品](https://ykkate.github.io/the-f2e/#/no3)
+
+台中聚會用，陸續補上
