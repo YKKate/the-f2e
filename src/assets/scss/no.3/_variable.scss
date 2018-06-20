@@ -1,0 +1,13 @@
+@import "../_mixin";
+
+$pcWidth: 1200px;
+$mobileWidth: 768px;
+
+$headerHeight: 70px;
+
+
+@mixin PCWidth {
+  max-width: $pcWidth;
+  width: 100%;
+  margin: 0 auto;
+}

@@ -12,6 +12,9 @@ import regular from '@fortawesome/fontawesome-free-regular'
 import brands from '@fortawesome/fontawesome-free-brands'
 // import VCharts from 'v-charts'
 
+import VCharts from 'v-charts'
+Vue.use(VCharts)
+
 fontawesome.library.add(solid)
 fontawesome.library.add(regular)
 fontawesome.library.add(brands)

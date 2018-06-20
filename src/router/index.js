@@ -13,6 +13,13 @@ const No1PageCompleted = resolve => require(['@/components/no.1/PageCompleted'],
 const No2Layout = resolve => require(['@/components/no.2/Layout'], resolve)
 const No2PageIndex = resolve => require(['@/components/no.2/PageIndex'], resolve)
 
+// No.3
+const No3Layout = resolve => require(['@/components/no.3/Layout'], resolve)
+const No3PageDemo = resolve => require(['@/components/no.3/Demo'], resolve)
+const No3PageIndex = resolve => require(['@/components/no.3/PageIndex'], resolve)
+const No3PageOrders = resolve => require(['@/components/no.3/PageOrders'], resolve)
+const No3PageProduct = resolve => require(['@/components/no.3/PageProduct'], resolve)
+
 Vue.use(Router)
 
 export default new Router({
@@ -24,7 +31,6 @@ export default new Router({
     },
     {
       path: '/no1',
-      name: 'no1',
       component: No1Index,
       children: [
         {
@@ -46,13 +52,38 @@ export default new Router({
     },
     {
       path: '/no2',
-      name: 'no2',
       component: No2Layout,
       children: [
         {
           path: '/',
           name: 'No2Index',
           component: No2PageIndex
+        }
+      ]
+    },
+    {
+      path: '/no3/',
+      component: No3Layout,
+      children: [
+        {
+          path: 'demo',
+          name: 'No3Demo',
+          component: No3PageDemo
+        },
+        {
+          path: '/',
+          name: 'No3Index',
+          component: No3PageIndex
+        },
+        {
+          path: '/orders',
+          name: 'No3Orders',
+          component: No3PageOrders
+        },
+        {
+          path: '/product',
+          name: 'No3Product',
+          component: No3PageProduct
         }
       ]
     }
