@@ -1,7 +1,7 @@
 <template>
   <div id="no3">
     <header
-      v-if="!$route.name === 'No3Demo'"
+      v-if="$route.name !== 'No3Demo'"
     >
       <div class="header">
         <h1>Shoptime</h1>
@@ -17,7 +17,12 @@
 </template>
 <script>
 export default {
-  name: 'No3Index'
+  name: 'No3Index',
+  mounted () {
+    this.$nextTick(function () {
+      console.log(this.$route)
+    })
+  }
 }
 </script>
 
