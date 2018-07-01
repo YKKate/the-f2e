@@ -1,0 +1,2 @@
+webpackJsonp([10],{OmBJ:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("p",[this._v("This is Orders Page")])},staticRenderFns:[]},s=n("VU/8")(null,r,!1,null,null,null);t.default=s.exports}});
+//# sourceMappingURL=10.11587b94ebe9a6593ab2.js.map

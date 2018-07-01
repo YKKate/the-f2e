@@ -26,6 +26,22 @@
         :settings="chartSettings"
       ></ve-line>
     </div>
+    <div class="boxes2">
+      <div class="box">
+        <p class="title">Transaction Website</p>
+        <div class="item-box">
+          <div class="item">
+            <font-awesome-icon :icon="['fab', 'facebook']"/>
+          </div>
+          <div class="item">
+            <font-awesome-icon :icon="['fab', 'google']"/>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <p class="title">Latest Orders</p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -124,11 +140,29 @@ h3.title {
 }
 .chart {
   padding: 30px 40px;
+  margin-bottom: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px 5px #EBEBEB;
   > * {
     max-width: 100%;
     max-height: 100%;
+  }
+}
+.boxes2 {
+  display: flex;
+  .box {
+    flex: 1;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px 5px #EBEBEB;
+    border-radius: 3px;
+    background-color: #fff;
+    &:first-child {
+      margin-right: 20px;
+    }
+    .title {
+      font-family: HelveticaNeue-Bold;
+      @include rem('font-size', 24px);
+    }
   }
 }
 </style>

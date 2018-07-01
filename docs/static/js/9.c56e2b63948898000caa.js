@@ -1,2 +1,0 @@
-webpackJsonp([9],{Ger7:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("p",[this._v("This is Order Page")])},staticRenderFns:[]},l=n("VU/8")(null,r,!1,null,null,null);t.default=l.exports}});
-//# sourceMappingURL=9.c56e2b63948898000caa.js.map
